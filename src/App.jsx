@@ -10,9 +10,9 @@ export default function App() {
     setQueue([...queue, {...customer, id: Date.now(), status: "waiting"}]);
   };
   const updateStatus = (id, newStatus) => {
-    setQueue(queue.map(customer =>{
+    setQueue(queue.map(customer =>
       customer.id === id ? {...customer, status:newStatus}:customer
-    }))
+    ))
   };
   const removeFromQueue = (id) => {
     setQueue(queue.filter(customer => customer.id !== id))
