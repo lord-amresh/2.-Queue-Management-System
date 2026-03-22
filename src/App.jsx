@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import QueueForm from "./components/QueueForm";
+import QueueDisplay from "./components/QueueDisplay";
 
 export default function App() {
   const [queue, setQueue] = useState([]);
@@ -26,7 +27,11 @@ export default function App() {
       </header>
       <main>
         <QueueForm onAdd={addToQueue}/>
-        <h1>QueueDisplay</h1>
+        <QueueDisplay
+        queue={queue}
+        onUpdateStatus={updateStatus}
+        onRemove={removeFromQueue}
+        />
       </main>
     </div>
   );
